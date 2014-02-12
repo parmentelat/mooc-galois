@@ -1,0 +1,188 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage [latin1]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\setlength{\oddsidemargin}{-1cm}
+\setlength{\textwidth}{18cm}
+\setlength{\topmargin}{0cm}
+\setlength{\textheight}{21cm}
+\setlength{\headsep}{1.5cm}
+\setlength{\parindent}{0.5cm}
+
+\newcommand{\myd}{\textbf{Définition:~}}
+\newcommand{\myn}{\textbf{Notation:~}} 
+\newcommand{\myc}{\textbf{Corollaire:~}} 
+\newcommand{\note}{\textbf{Note perso:~}}
+\newcommand{\mybox}[1]{\fbox{\parbox{\linewidth}{#1}}}
+
+\begin{document}
+
+\section*{S02E01 -- algébricité, transcendance}
+
+\begin{itemize} 
+\item 
+$Q[\sqrt{2}] = { a + b\sqrt{2}, (a,b) \in \mathbb{Q} }$
+
+est une extension de corps du corps $\mathbb{Q}$ de dimension 2.
+
+\item
+K est un k-espace vectoriel.
+
+$\mathbb{C}$ est de dimension 2 sur $\mathbb{R}$
+
+\item 
+Un nombre complexe est algébrique (sur  $\mathbb{Q}$) s'il est racine d'un
+polynôme (non nul) à coefficients dans $\mathbb{Q}$
+
+$cos (\frac{2i\pi}{n})$ est algébrique.
+
+\item 
+Les nombres algébriques sont dénombrables, ils sont en densité nulle dans
+$\mathbb{C}$
+
+$e$ et $\pi$ sont transcendants (resp. 1872, Hermite, et 1882, Lindemann).
+
+\item 
+$\zeta$ fonction de Riemann, $\zeta(s)=\sum\limits_{n=1}^{\infty}n^{-s}$
+
+$\zeta(2k)$ est un multiple rationnel de $\pi^{2k}$, et donc transcendant
+(Euler, 1748)
+\end{itemize} 
+
+\section*{S02E02 -- extensions de corps}
+
+\begin{itemize}
+\item \myd
+$K/k$ une extension de corps et $x\in k$
+
+x est algébrique sur $k$ si et seulement si $x$ est racine d'un polynôme non
+nul de $k[X]$
+
+\item \myd $K$ est algébrique sur $k$ si tous les éléments de $K$ sont algébriques
+  sur $k$.
+
+\item \myn
+$k[x_1, \ldots, x_n]$ l'anneau engendré par $[x_1, \ldots, x_n]$
+
+\item $k[x_1, \ldots, x_n]$ est une $k$-algèbre, donc un $k$-espace vectoriel,
+  mais en général pas un corps.
+
+\newpage  
+\item \mybox{Soit $K/k$; un élément $x$ de $K$ est algébrique sur $k$ si et seulement
+  si l'espace vectoriel $k[x]$ est de dimension finie.}
+
+\item Preuve 1/2 ($x$ algébrique sur $k$ $\Rightarrow$ $k[x]$ de dimension
+  finie)
+
+\(\exists\ P \in k[X],  P[x]=0 \)
+
+\(\exists\ n\in \mathbb{N}^*,  \exists\ a_{n-1},\ldots,a_0\in k, ~~~ x^n +
+a_{n-1}x^{n-1}+ \ldots +a_0 = 0 \)
+
+\( x^n = -(a_{n-1}x^{n-1}+ \ldots +a_0) \)
+
+$\forall p\ge n, x^p$ est combinaison linéaire des $1,x,x^2,\ldots,x^{n-1}$
+
+$k[x]$ est de dimension $\leq n-1$
+
+\item Preuve 2/2 ($k[x]$ de dimension finie $\Rightarrow$ $x$ algébrique sur
+  $k$)
+
+Soit $n$ la dimension de $k[x]$
+
+On considère la famille ${1,x,x^2,\ldots,x^{n}}$ de $n+1$ vecteurs
+
+Cette famille est liée, il existe une combinaison linéaire non triviale qui s'annule
+
+$ \exists a_n,\ldots,a_0, ~~~ \sum\limits_ia_ix^i=0$
+
+D'où $x$ est algébrique sur $k$
+
+\vspace{0.5cm}
+\hrule
+
+\item \mybox{\myc Soit $K/k$ une extension de corps, si $K$ est un $k-$espace vectoriel
+  de dimension finie, l'extension $K/k$ est algébrique. }
+
+\item 
+
+\myd On parle alors d'extension finie de degré $dim_k(K)$
+
+ \myn On note $[K:k]$ la dimension de $K$ comme $k$-espace vectoriel  
+ 
+$[K:k] = dim_k(K)$
+
+\item Preuve
+
+Soit $x\in K$, montrons que la dimension de $k[x]$ est finie sur $k$.
+
+Or $k[x] \subset K$, donc en termes de dimension: $dim_k(k[x]) \leq dim_k(K) <
+\infty$
+
+D'où $dim_k(k[x])$ est finie, et donc $x$ est algébrique sur $K$
+
+\item \mybox{En particulier si $x\in K$ est algébrique sur $k$, $k[x]/k$ est algébrique. }
+
+\item Preuve
+
+Si $x$ est algébrique sur $k$, montrons que tous les éléments $y$ de $k[x]$
+sont algébriques sur $k$.
+
+$k[y] \subset k[x]$ (exercice \ldots en effet)
+
+$dim_k(k[y]) \leq dim_k(k[x]) < \infty$
+
+D'où $y$ est algébrique sur $k$.
+
+\end{itemize}
+
+\newpage
+\section*{S02E03 -- extensions de corps -- suite}
+
+\begin{itemize}
+
+\item \mybox{Soit $K/k$ une extension de corps. Si $x \in K$ est algébrique sur
+  $k$, alors l'anneau $k[x]$ est un corps, extension algébrique de $k$.}
+
+\item Preuve
+
+Soit $x$ algébrique sur $k$, montrons que pour tout $y$ non nul dans $k[x]$,
+$\dfrac{1}{y}$ appartient à $k[x]$
+
+$x$ étant algébrique, d'après ce qui précède $k[x]$ est une extension
+algébrique, donc $y$ est algébrique.
+
+Donc~~~ $\exists P=[a_0,\ldots,a_n]\in k[X], P(y)=0$
+
+on choisit P unitaire, et de degré minimal $n$.
+
+$a_0 \neq 0$ car sinon on peut trouver $P'=[a_1,\ldots,a_n]$ de degré $n-1$ dont
+$y$ est racine,\\\mbox{}~~ ce qui contredit le degré minimal.
+
+d'où~~~ $-a_0 = y(\sum\limits_{i=1}^na_iy^{i-1})$
+
+soit~~~ $ \dfrac{1}{y} = \dfrac{-\sum\limits_{i=1}^na_iy^{i-1}}{a_0}~~~~~\in
+k[y]$ 
+
+$k[y] \subset k[x]$ ~~~~\textit{je me demande si en fait on n'a pas aussi $k[x]=k[y] $?}
+
+$\dfrac{1}{y} \in k[x]$
+
+\item Exemple
+
+$\mathbb{Q}[\sqrt[3]{2}]=\{a + b\sqrt[3]{2}+c\sqrt[3]{4}, (a,b,c) \in
+  \mathbb{Q}\}$ est un corps
+
+\item Généralisation aux polynômes à plusieurs variables
+
+\mybox{Soit une extension de corps $K/k$. Si $x_1,\ldots,x_n$ sont algébriques
+  sur $k$, alors l'anneau $k[x_1,\ldots,x_n]$ engendré par les $x_i$ est un
+  corps, extension finie algébrique de $k$.}
+
+
+\end{itemize}
+
+\section*{S02E04 -- }
+
+\end{document}
