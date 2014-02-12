@@ -1,0 +1,288 @@
+
+1
+00:00:03.000 --> 00:00:08.500
+Hello, welcome to this presentation of the MOOC "Introduction to Galois Theory"
+
+2
+00:00:08.510 --> 00:00:14.010
+MOOC, or FLOT, for "Formation en Ligne Ouverte a Tous", in Moliere's language
+
+3
+00:00:14.020 --> 00:00:21.520
+ Solving polynomial equations with a degree <= 4 has been achievable by mathematicians since XVI-th century
+
+4
+00:00:21.530 --> 00:00:27.030
+For example in this second degree equation, we have  
+
+5
+00:00:27.040 --> 00:00:38.540
+a root : [ 1/2 + 1/2 j sqrt(3) ] that is a typical standard resolution based on the discriminant (here -3)
+
+6
+00:00:38.550 --> 00:00:44.550
+In this 3rd-degree example, 
+
+7
+00:00:44.560 --> 00:00:57.560
+here the real root only involves cubic and square root operations, as well as, of course, the 4 arithmetic operations
+
+8
+00:00:57.570 --> 00:01:02.570
+let us look at a very simple degree-4 equation
+
+9
+00:01:02.580 --> 00:01:07.080
+ we will use a free software named sage, that I recommend to use
+
+10
+00:01:07.090 --> 00:01:9.090
+that turned out extremely efficient
+
+11
+00:01:9.100 --> 00:01:13.100
+so what do we find ?
+
+12
+00:01:13.110 --> 00:01:18.110
+well, depending on the taste, a beautiful or ugly formula
+
+13
+00:01:18.120 --> 00:01:24.620
+that involves the 4 operations, nested n-th roots 
+
+14
+00:01:24.630 --> 00:01:29.630
+here cubic and square roots
+
+15
+00:01:29.640 --> 00:01:36.140
+we will see as an exercise that these equations with a degree <= 4 can be solved
+
+16
+00:01:36.150 --> 00:01:42.650
+you will be taught how to, the way mathematicians know how to do that for a very long time
+
+17
+00:01:42.660 --> 00:01:47.160
+so what happens with degrees >= 5 ?
+
+18
+00:01:47.170 --> 00:01:50.670
+for that let us consider 3 typical examples
+
+19
+00:01:50.680 --> 00:01:58.680
+first example is very simple, low degree, simple coefficients
+
+20
+00:01:58.690 --> 00:02:06.690
+second example, still low degree, but more complex coefs
+
+21
+00:02:06.700 --> 00:02:18.200
+finally third example, really complicated with a high degree (9), and many non-null coefs
+
+22
+00:02:18.210 --> 00:02:23.210
+What questions can we ask ourselves ?
+
+23
+00:02:23.220 --> 00:02:30.220
+are we able to solve these equations using only the 4 operations, and nested roots
+
+24
+00:02:30.230 --> 00:02:37.730
+and if so, which is the simplest to solve, which is the hardest
+
+25
+00:02:37.740 --> 00:02:45.740
+like earlier, we use sage, some good publicity for this very nice software
+
+26
+00:02:45.750 --> 00:02:48.250
+let us see
+
+27
+00:02:48.260 --> 00:02:52.260
+you can see here the 3 equations in question
+
+28
+00:02:52.270 --> 00:02:59.270
+for the most complicated one, there is a cubic root here
+
+29
+00:02:59.280 --> 00:03:05.280
+and here a power of a cubic root, and a square root
+
+30
+00:03:05.290 --> 00:03:10.290
+so we have a solution with nested radicals
+
+31
+00:03:10.300 --> 00:03:25.300
+the second equation, a little simpler, and here again we have a solution that involves only  square roots
+
+32
+00:03:25.310 --> 00:03:30.310
+so here again solutions can be expressed as nested radicals
+
+33
+00:03:30.320 --> 00:03:39.820
+for the last one, apparently the simplest, sage does not know how to handle it, that's why it just copies the input equation
+
+34
+00:03:39.830 --> 00:03:44.330
+simply because there is no such formula, like Galois's theory will explain
+
+35
+00:03:44.340 --> 00:03:50.340
+so we can see that the simplest of these 3 equations
+
+36
+00:03:50.350 --> 00:03:55.350
+is not solvable with nested radicals
+
+37
+00:03:55.360 --> 00:04:04.860
+while more complex equations are solvable this way, including the one with a high degree and complex coefs
+
+38
+00:04:04.870 --> 00:04:9.870
+the order of complexity of these equations is unexpected
+
+39
+00:04:9.880 --> 00:04:14.880
+since it is (2) < (3) < (1) which is counter-intuitive
+
+40
+00:04:14.890 --> 00:04:20.890
+so Galois's theory can explain what is happening here, and you will be taught how to define Galois groups
+
+41
+00:04:20.900 --> 00:04:25.400
+how to compute them, and how to understand all these phenomena
+
+42
+00:04:25.410 --> 00:04:29.910
+So let us explain, what is intuitively this Galois group ? 
+
+43
+00:04:29.920 --> 00:04:36.920
+the key concept is the notion of symetry, symetry within C the field of complex numbers,  that preserves the 4 operations
+
+44
+00:04:36.930 --> 00:04:43.430
+these symetries shuffle the roots of any polynomial equation
+
+45
+00:04:43.440 --> 00:04:48.440
+so this is a set of permutations of these n roots
+
+46
+00:04:48.450 --> 00:04:52.450
+and these permutations make the Galois group of this equation
+
+47
+00:04:52.460 --> 00:04:58.460
+to get an intuitive grasp on this notion, let us have a little quizz
+
+48
+00:04:58.470 --> 00:05:01.970
+on a very concrete example
+
+49
+00:05:01.980 --> 00:05:06.980
+let us look at the first, apparently simplest, equation
+
+50
+00:05:06.990 --> 00:05:13.990
+using a calculus software, or using our future skills
+
+51
+00:05:14.000 --> 00:05:20.000
+this group is generated by two elements
+
+52
+00:05:20.010 --> 00:05:27.510
+two permutations of the 5 roots z1..z5
+
+53
+00:05:27.520 --> 00:05:32.520
+(1) a cyclic permutation among the 5 roots 
+
+54
+00:05:32.530 --> 00:05:39.030
+(2) a transposition that swaps z1 and z2
+
+55
+00:05:39.040 --> 00:05:45.540
+we will see how to compute the group generated by (1) and (2)
+
+56
+00:05:45.550 --> 00:05:52.050
+and will see this is the set of all permutations, it has 120 elements, and somehow rather complex 
+
+57
+00:05:52.060 --> 00:05:57.060
+The second equation has a Galois group generated by a single element
+
+58
+00:05:57.070 --> 00:06:04.070
+a cyclic permutation of 4 of the 5 roots, one of the roots is a singularity, we call it z5
+
+59
+00:06:04.080 --> 00:06:9.080
+this is simply because there is an "obvious" root, namely -1
+
+60
+00:06:9.090 --> 00:06:15.090
+which is a rational number, and these are always fixed by the Galois group
+
+61
+00:06:15.100 --> 00:06:21.100
+this is why we only have 4 of the 5 roots involved in the permutations; this is a very simple group
+
+62
+00:06:21.110 --> 00:06:31.110
+as for the last and third equation, we again have a group generated by a single cyclic permutation of the 9 roots
+
+63
+00:06:31.120 --> 00:06:40.620
+So let us summarize; the Galois group for equation (2), low degree but complex coefs,
+
+64
+00:06:40.630 --> 00:06:45.630
+is a commutative, cyclic group,  with a very small cardinal (4)
+
+65
+00:06:45.640 --> 00:06:53.640
+Equation (3), apparently the hardest, high degree, many coefs,
+
+66
+00:06:53.650 --> 00:07:02.150
+gives a commutative, cyclic, very simple group, with a slightly larger cardinal (9), so a bit more complex than G2
+
+67
+00:07:02.160 --> 00:07:14.160
+and equation (1), apparently the simplest, gives a group that is not commutative,
+
+68
+00:07:14.170 --> 00:07:19.670
+very large (cardinal 120), and we will see that it is non-solvable in the sense of the group theory
+
+69
+00:07:19.680 --> 00:07:24.680
+hence the counter-intuitive order of complexity among the equations (2) < (3) < (1)
+
+70
+00:07:24.690 --> 00:07:29.690
+I thank you for attending this presentation, and look forward to seeing you on the first real lecture of this MOOC
+
+71
+00:07:29.700 --> 00:07:38.700
+that will by given by Olivier, but you can start exchanging in the chat rooms with your co-FLOTers
+
+72
+00:07:38.710 --> 00:07:43.710
+ask your questions to the staff, in any case see you soon, and wish you a good work
