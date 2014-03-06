@@ -10,11 +10,28 @@
 \setlength{\headsep}{1.5cm}
 \setlength{\parindent}{0.5cm}
 
+\newcommand{\ssi}{si et seulement si}
 \newcommand{\myd}{\textbf{Définition:~}}
 \newcommand{\myn}{\textbf{Notation:~}} 
 \newcommand{\myc}{\textbf{Corollaire:~}} 
-\newcommand{\note}{\textbf{Note perso:~}}
+\newcommand{\myl}{\textbf{Lemme:~}}   
+\newcommand{\myt}{\textbf{Théorème:~}}   
+\newcommand{\myp}{\textbf{Proposition:~}}   
+\newcommand{\myr}{\textbf{Remarque:~}}    
+\newcommand{\mye}{\textbf{Exemple:~}}    
+\newcommand{\mynote}[1]{\textbf{Note perso:~}\textit{#1}}
 \newcommand{\mybox}[1]{\fbox{\parbox{\linewidth}{#1}}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\ZZ}{$\mathbb{Z}$} 
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\QQ}{$\mathbb{Q}$} 
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\RR}{$\mathbb{R}$}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\CC}{$\mathbb{C}$}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\FF}{$\mathbb{F}$}
+\newcommand{\myline}{\vspace{0.5cm}\hrule}
 
 \begin{document}
 
@@ -22,24 +39,23 @@
 
 \begin{itemize} 
 \item 
-$Q[\sqrt{2}] = { a + b\sqrt{2}, (a,b) \in \mathbb{Q} }$
+$\Q[\sqrt{2}] = { a + b\sqrt{2}, (a,b) \in \Q }$
 
-est une extension de corps du corps $\mathbb{Q}$ de dimension 2.
+est une extension de corps du corps $\Q$ de dimension 2.
 
 \item
 K est un k-espace vectoriel.
 
-$\mathbb{C}$ est de dimension 2 sur $\mathbb{R}$
+\CC\ est de dimension 2 sur \RR
 
 \item 
-Un nombre complexe est algébrique (sur  $\mathbb{Q}$) s'il est racine d'un
-polynôme (non nul) à coefficients dans $\mathbb{Q}$
+Un nombre complexe est algébrique (sur  $\Q$) s'il est racine d'un
+polynôme (non nul) à coefficients dans $\Q$
 
 $cos (\frac{2i\pi}{n})$ est algébrique.
 
 \item 
-Les nombres algébriques sont dénombrables, ils sont en densité nulle dans
-$\mathbb{C}$
+Les nombres algébriques sont dénombrables, ils sont en densité nulle dans \CC
 
 $e$ et $\pi$ sont transcendants (resp. 1872, Hermite, et 1882, Lindemann).
 
@@ -54,9 +70,9 @@ $\zeta(2k)$ est un multiple rationnel de $\pi^{2k}$, et donc transcendant
 
 \begin{itemize}
 \item \myd
-$K/k$ une extension de corps et $x\in k$
+$K/k$ une extension de corps et $x\in K$
 
-x est algébrique sur $k$ si et seulement si $x$ est racine d'un polynôme non
+x est algébrique sur $k$ \ssi\ $x$ est racine d'un polynôme non
 nul de $k[X]$
 
 \item \myd $K$ est algébrique sur $k$ si tous les éléments de $K$ sont algébriques
@@ -69,8 +85,8 @@ $k[x_1, \ldots, x_n]$ l'anneau engendré par $[x_1, \ldots, x_n]$
   mais en général pas un corps.
 
 \newpage  
-\item \mybox{Soit $K/k$; un élément $x$ de $K$ est algébrique sur $k$ si et seulement
-  si l'espace vectoriel $k[x]$ est de dimension finie.}
+\item \mybox{Soit $K/k$; un élément $x$ de $K$ est algébrique sur $k$ \ssi\ 
+l'espace vectoriel $k[x]$ est de dimension finie.}
 
 \item Preuve 1/2 ($x$ algébrique sur $k$ $\Rightarrow$ $k[x]$ de dimension
   finie)
@@ -99,8 +115,8 @@ $ \exists a_n,\ldots,a_0, ~~~ \sum\limits_ia_ix^i=0$
 
 D'où $x$ est algébrique sur $k$
 
-\vspace{0.5cm}
-\hrule
+
+\myline
 
 \item \mybox{\myc Soit $K/k$ une extension de corps, si $K$ est un $k-$espace vectoriel
   de dimension finie, l'extension $K/k$ est algébrique. }
@@ -165,24 +181,841 @@ d'où~~~ $-a_0 = y(\sum\limits_{i=1}^na_iy^{i-1})$
 soit~~~ $ \dfrac{1}{y} = \dfrac{-\sum\limits_{i=1}^na_iy^{i-1}}{a_0}~~~~~\in
 k[y]$ 
 
-$k[y] \subset k[x]$ ~~~~\textit{je me demande si en fait on n'a pas aussi $k[x]=k[y] $?}
+$k[y] \subset k[x]$ ~~~~\mynote{je me demande si en fait on n'a pas aussi $k[x]=k[y] $?}
 
 $\dfrac{1}{y} \in k[x]$
 
-\item Exemple
+\mye Exemple
 
-$\mathbb{Q}[\sqrt[3]{2}]=\{a + b\sqrt[3]{2}+c\sqrt[3]{4}, (a,b,c) \in
-  \mathbb{Q}\}$ est un corps
+$\Q[\sqrt[3]{2}]=\{a + b\sqrt[3]{2}+c\sqrt[3]{4}, (a,b,c) \in
+  \Q\}$ est un corps
 
+\newpage
 \item Généralisation aux polynômes à plusieurs variables
 
 \mybox{Soit une extension de corps $K/k$. Si $x_1,\ldots,x_n$ sont algébriques
   sur $k$, alors l'anneau $k[x_1,\ldots,x_n]$ engendré par les $x_i$ est un
   corps, extension finie algébrique de $k$.}
 
+\item Preuve
+
+Comme précédemment, les $x_i$ sont algébriques donc pour chacun il existe un
+polynôme $P_i$ de degré $d_i$ qui annule $x_i$
+
+$\forall i, \exists P_i\neq 0 , P_i(x_i) = 0$
+
+Pour chaque $i$, un terme $x^j$ avec $j\geq d_i$ peut donc se ramener à des termes
+ne comportant que des $x^j$ avec $j<d_i$
+
+On peut exhiber une base finie de $k[x_1,\ldots,x_n]$ sur $\Q$, de cardinal
+$\prod\limits_{i=1}^nd_i$
+
+$B=\{x_1^{i_1}*\ldots*x_n^{i_n}, 0\leq i_j\leq d_j\}$
+
+En vertu du corollaire précédent, $k[x_1,\ldots,x_n]$ est un $k$-espace
+vectoriel de dimension finie sur $k$, l'extension $k[x_1,\ldots,x_n]/k$ est
+donc algébrique
+
+Soit $x\in k[x_1,\ldots,x_n]$, $x$ est donc algébrique sur $k$, $k[x]$ est une
+extension algébrique sur $k$, c'est un corps.
+
+Donc $\dfrac{1}{x} \in k[x]$; de plus $k[x] \subset k[x_1,\ldots,x_n]$, donc
+$\dfrac{1}{x} \in k[x_1,\ldots,x_n]$, qui est donc un corps
+
+\mye 
+
+$\sqrt(2)+\sqrt(3)+\sqrt(5) \in \Q[\sqrt(2),\sqrt(3), \sqrt(5)]$ est algébrique sur $\Q$
+
+$cos(\frac{2\pi}{11}) \in \Q[e^{\frac{2i\pi}{11}}]$ est algébrique sur $\Q$
+
+\myline
+
+\item \mybox{\myc Soit $K/k$ une extension de corps, l'ensemble $K_{alg}$ des
+    éléments de $K$ qui sont algébriques sur $k$ est un sous-corps de $K$}
+
+\item Preuve
+
+il s'agit de montrer que $K_{alg}$ est clos pour $+,-,*,/$; soit donc $x,y \in
+K_{alg}$;
+
+d'après le théorème précédent $k[x,y]$ est un corps, donc $x+y$, $-x$, $xy$ et
+$1/x$ sont dans $k[x,y]$
+
+par ailleurs $k[x,y]$ est algébrique donc toutes ces valeurs sont algébriques,
+et donc dans $K_{alg}$.
+
+\newpage
+\item \mybox{\myt \textit{Transitivité} 
+
+Soient $L_1 \subset L_2 \subset L_3$ des extensions de corps;
+    on a alors
+\begin{enumerate}
+\item  $[L_3:L_1]=[L_3:L_2]*[L_2:L_1]$, fini ou non,
+\item $L_3/L_1$ finie \ssi\ $L_3/L_2$ et $L_2/L_1$ le sont
+\item $L_3/L_1$ algébrique \ssi\ $L_3/L_2$ et $L_2/L_1$ le sont
+\end{enumerate}
+}
+
+\item Preuve 
+\begin{enumerate} 
+\item Cas particulier des dimensions d'espaces vectoriels
+
+$dim_{L_1}(V_3) = dim_{L_1}(V_2)*dim_{L_2}(V_3)$
+\item Découle de 1
+\item 
+\begin{itemize}
+\item \textit{Sens direct} 
+
+Si $L_3/L_1$ est algébrique; 
+
+$\forall x_3 \in L_3, \exists P \in L_1[X], P(x_3)=0$
+Mais bien entendu $L_1[X] \subset L_2[X]$ donc $P \in L_2[X]$. Donc $L_3/L_2$
+est algébrique.
+
+De même, un élément $x_2\in L_2$ est a fortiori dans $L_3$ donc on peut trouver
+$P\in L_1$ qui annule $x_2$, et $L_2/L_1$ est algébrique.
+
+\item \textit{Réciproque} 
+
+Si $L_3/L_2$ et $L_2/L_1$ sont algébriques; on doit montrer que $L_3/L_1$ est
+algébrique. 
+
+Pour cela considérons $x_3 \in L_3$.
+
+$\exists P =\sum\limits_{i}a_i x^i \in L_2[X]$ tel que $P(x_3)=0$
+
+À ce stade, chacun des $a_i$ est algébrique dans $L_1$~:
+
+$\forall k, \exists P_k=\sum_i b_{ik}x^i$ tel que $P_k(a_k)=0$.
+
+xxx À terminer, pas compris le raisonnement du cours xxx
+
+\end{itemize} 
+\end{enumerate} 
 
 \end{itemize}
 
-\section*{S02E04 -- }
+\newpage
+\section*{S02E04 -- Corps algébriquement clos}
 
-\end{document}
+\begin{itemize} 
+\item \myd Un corps $k$ est dit algébriquement clos si tout polynôme non constant de
+$k[X]$ admet une racine dans $k$
+
+\item \myp Soit $k$ un corps algébriquement clos, tout polynôme $P \in k[X]$ est
+scindé
+
+\item \myp Toute extension algégrique d'un corps algébriquement clos est réduite à $k$
+
+\item Le corps \CC\ des nombres complexes est algébriquement clos
+
+\item on ne connaît pas de preuve algébrique, preuves analytiques seulement.
+
+\item Preuve 1 (fonctions holomorphes)
+
+Supposons que P ne s'annule pas sur \CC
+
+$f(z)=\frac{1}{P(z)}$ est holomorphe (dérivable au sens complexe) sur \CC\ et
+bornée; elle est donc constante ...
+
+\item Preuve 2 (sans fonctions holomorphes)
+
+Même argument mais sans les fonctions holomorphes
+
+$m(r) = \int_{C(r)} \frac{1}{P(z)}\frac{dz}{z}$
+
+Changement de variable $z=r.e^{i\theta}$
+
+$m(r) = i \int_0^{2\pi} \frac{d\theta}{P(r.e^{i\theta})}$
+
+limites de m(r):  en 0, $\frac{2i\pi}{P(0)}$ et à l'infini 0 si P non constant.
+
+Mais en fait si on dérive m(r) par rapport à r on obtient
+
+$ \frac{1}{r} \int_0^{2\pi} \frac{\partial}{\partial \theta}
+\frac{1}{P(r.e^{i\theta})} d\theta$
+
+Soit encore
+
+$\frac{1}{r} \biggl[ \frac{1}{P(r.e^{i\theta})} \biggr]_0^{2\pi} = 0$
+
+De sorte que m(r) est constant, ce qui contradit les limites ci-dessus
+
+Ainsi le corps des rationnels \QQ\ est contenu dans un corps algébriquement
+clos \CC\ qui contient toutes les racines des polynômes de $\Q[X]$ -- et même de $\C[X]$.
+\end{itemize}
+
+\newpage
+\begin{itemize} 
+\item \myt (de Steiniz) Tout corps est contenu dans un corps algébriquement
+  clos (démontré plus tard) 
+
+\item \myp Étant donné un corps $k$
+\begin{itemize}
+\item il existe un corps algébriquement clos $\Omega$
+contenant $k$
+\item $\Omega$ n'est pas unique
+\item l'ensemble $\Omega_{alg}$ des éléments de $\Omega$ qui sont algébriques
+  sur $k$ est un corps
+\item et $\Omega_{alg}$ est algébriquement clos
+\item on appelle $\Omega_{alg}$ la clôture algébrique de $k$ (dans $\Omega$)
+\end{itemize} 
+
+\item \myd Étant donné un polynôme $P \in k[X]$, on définit le corps $K$ des
+  racines de $P$ (dans $\Omega$) comme l'anneau engendré par les racines de $P$
+
+$K = k[\omega_1,...,\omega_n]$
+
+\item \myp L'extension $K/k$ est finie.
+
+\item $K$ est unique à un isomorphisme près.
+\end{itemize}
+
+\newpage
+\section*{S02E05 -- Théorème de l'élément primitif}
+
+\begin{itemize}
+\item Soit une extension finie $K/k$. Si $k$ est de caractéristique zéro, ou si
+  $k$ est fini, il existe $x\in K$ tel que $K=k[x]$
+
+\item \myd Les éléments $x$ tels que $K=k[x]$ s'appellent les éléments primitifs de
+  l'extension.
+
+\item \myd L'extension est alors dite monogène.
+
+\item Nous commençons par démontrer le lemme ``vers l'élement primitif'':
+
+\item \myl Soient $x,y$ des éléments d'un corps algébriquement clos $\Omega/k$
+  algébriques sur $k$. Alors si $x$ et $y$ sont annulés par des polynômes de
+  $k[X]$ \textit{à racines simples} dans $\Omega$ et si $k$ est infini, alors
+  il existe $t \in k$ tel que $k[x,y] = k[x+ty]$
+
+\item Preuve
+
+Soit $P_x \in k[X]$ un polynôme à racines simples $x_1,\ldots,x_m$ dans $\Omega$
+
+Soit $P_y \in k[X]$ un polynôme à racines simples $y_1,\ldots,y_n$ dans $\Omega$
+
+Pour $t \in k^*$ posons $z=x+ty$ et $L_t=k[z]$ (dans la suite on note simplement $L$)
+
+On se propose d'ajuster $t$ de sorte que $x \in L$
+\begin{itemize} 
+\item car alors on aurait $x \in L$, et $y=(z-x)/t \in L$ donc (a) $k[x,y]
+  \subset L$
+\item et par ailleurs (b) $L=k[x+ty] \subset k[x,y]$
+\item donc si $x \in L$ alors $L = k[x,y]$
+\end{itemize} 
+
+On construit deux polynômes qui annulent x; le premier évidemment $P_x$; le
+second est construit à partir de $P_y$ avec le changement de variable:
+
+$Q(X) = P_y((z-X)/t)$
+
+qui est à coefficients dans $L$ (car $z$ et $t$ sont dans $L$) et qui
+s'annule en $x$ (car $(z-x)/t=y$)
+
+$R = pgcd(Q, P_x) \in L[X]$
+
+Maintenant il existe une autre façon de calculer le pgcd si on se place dans
+$\Omega[X]$; $P_x$ est scindé dans $\Omega$ et à racines simples, donc
+
+$P_x = \prod\limits_{i}(X-x_i)$
+
+On obtient pour le pgcd en ne gardant que les $x_i$ qui sont aussi racines de $Q$:
+
+$R(X) = \prod\limits_{i,Q(x_i)=0}(X-x_i)$
+
+Si à présent on a comme racines de $P_y$ les nombres $y_j$:
+
+$P_y(X) = \prod\limits_j(X-y_j)$
+
+alors les racines de $Q$ sont de la forme $z-t.y_j$ 
+\begin{itemize}
+\item en effet si $y_j$ est une racine de $P_y$,
+\item  et si $(z-x)/t = y_j$ 
+\item alors $x$ est racine de $Q$
+\end{itemize} 
+
+On a donc pour $Q$ les $j$ racines de la forme $x_j=z-t.y_j=x+t(y-y_j)$
+\begin{enumerate} 
+\item 
+Soit pour $y$ (qui est racine de $P_y$), on retrouve $x$ comme racine de $Q$
+\item 
+Ainsi que (j-1) autres racines de $Q$ la forme $x+t(y-y_j)$
+\end{enumerate}
+
+Notre objectif est que le pgcd $R(X)$ ne contienne que le terme $(X-x)$;
+c'est-à-dire que $x$ soit la seule racine de $P_x$ qui s'annule sur $Q$.
+
+Or $Q(x_i) = 0$ ssi $\exists j / x_i=x+t(y-y_j)$
+
+Il existe donc un nombre fini de ``mauvaises valeurs'' pour $t$ qui ne
+vérifient pas la propriété que $x$ est la seule racine commune à $P_x$ et $Q$.
+
+Comme $k$ est infini on en choisit une autre, et avec ce choix-là on obtient
+que $R(X)=(X-x)$ et comme il est à coefficients dans $L$ on a démontré que $x
+\in L$
+\end{itemize}
+
+\newpage
+\section*{S03E01 -- Polynôme minimal et conjugués}
+\begin{itemize}
+\item \myd Soit $k$ un corps, $x$ algébrique sur $k$.  L'unique polynôme $P \in
+  k[X]$ unitaire, de degré minimal, vérifiant $P(x)=0$ s'appelle le polynôme
+  minimal de $x$ (sur $k$). On le note $P_{min,x}$.
+\item \mye $\sqrt{2}$ a pour polynôme minimal $x^2-2$ 
+\item $\sqrt[3]{2}$ a pour polynôme minimal $x^3-2$ 
+\item $\frac{\sqrt{2}}{2}(1+i)$ a pour polynôme minimal sur \QQ\ $x^4+1$ 
+\item $\frac{\sqrt{2}}{2}(1+i)$ a pour polynôme minimal sur \RR\ $x^2-\sqrt{2}x+1$ 
+\item $\sqrt{2}+\sqrt{3}$ a pour polynôme minimal sur \QQ\ ceci
+
+$\prod(X \pm\sqrt{2} \pm\sqrt{3}) = (X^4-10X^2+1)$
+
+\item Le polynôme minimal sur \QQ\ de n'importe quelle racine complexe de
+  $X^5-X-2$ est $X^5-X-2$
+
+\item \myp $P_{min,x}$ est irréductible dans $k[X]$
+
+\item \myp En caractéristique 0, le polynôme minimal n'a aucune racine multiple
+  (même dans une extension de $k$)
+\end{itemize}
+
+Retour au théorème de l'élément primitif
+\begin{itemize} 
+\item \mybox{ \myt Soit $K$ une extension finie de $k$. Si $k$ est de
+    caractéristique nulle, alors il existe $x\in K$ tel que $K = k[x]$ }
+
+\item Par récurrence sur la dimension $[K:k]$; cas $n=1$ trivial
+
+\item Par hypothèse de récurrence, $\exists x\in K, k[x_1,\ldots,x_{n-1}]=k[x]$
+
+Donc $K = k[x,x_n]$
+
+$P_{min,x} et P_{min,x_n}$ sont à racines simples et $k$ est infini
+
+Le lemme ``vers l'élément primitif'' nous indique alors que $\exists t\in k$ tel
+que $k[x,x_n]=k[t.x+x_n]=K$ 
+
+\end{itemize} 
+
+\newpage
+\begin{itemize} 
+\item \myp Soit $k$ un corps et $x$ algébrique sur $k$. Alors 
+
+$\forall P\in k[X], P(x)=0 \Longleftrightarrow P_{min,x}|P$
+
+Dit autrement les polynômes dont $x$ est racine sont exactement les multiples
+du polynôme minimal.
+
+\item Preuve - sens direct; évidemment pour P un multiple du polynôme minimal,
+  sa valeur en x est nulle
+
+\item Preuve - réciproque; Si $P(x)=0$
+
+On divise $P$ par $P_{min,x}$ et on écrit
+
+$P = P_{min,x}.Q + R$ avec $deg (R) < deg (P_{min,x}$
+
+En évaluant sur $x$ on obtient $R(x)=0$ et par définition de $P_{min,x}$ il
+faut que $R=0$ 
+
+\item \myc Un polynôme de $k[X]$ irréductible  sur $k$ dont $x$ est racine est le
+  polynôme minimal de $x$.
+
+\item Dit encore autrement, l'application linéaire 
+
+$k[X] \rightarrow k$
+
+$x \mapsto k(x)$
+
+a pour noyau les multiples de $P_{min,x}$ et pour image $k[x]$
+
+\item Si $d := deg (P_{min,x}$, la famille $(1_k,x,\ldots,x^{d-1})$ engendre $k[x]$
+
+En outre cette famille est libre (par définition du polynôme minimal)
+
+Donc $dim_k k[x] = deg (P_{min,x})$
+
+\myn C'est le degré de $x$ sur $k$, noté $deg_k(x)$
+\end{itemize} 
+
+\newpage
+\section*{S03E02 -- Conjugués et Prolongement des extensions}
+
+\begin{itemize} 
+\item Soit $k$ un corps
+\item On a admis le théorème de Steiniz, il existe une extension $\Omega$ de
+  $k$ algébriquement clos.
+\item Soit $x \in k$, le polynôme $P_{min,x}$ est scindé dans $\Omega$
+\item \myd Les racines de $P_{min,x}$ sont les \textbf{conjugués} de $x$ (dans
+  $\Omega$)
+\item \myd Ces racines engendrent le \textbf{corps des racines} de $P_{min,x}$
+\item $x$ a \textbf{au plus} $deg_k(x)$ conjugués
+\item en caractéristique nulle $x$ a \textbf{exactement}  $deg_k(x)$ conjugués
+\end{itemize} 
+
+\myline
+
+\begin{itemize} 
+\item morphisme de corps $u : k \rightarrow K$
+
+\item nécessairement injectif; si $x \neq 0_k$ alors $u(x) \neq 0_K$
+
+\item dit autrement $ker(u)={0_k}$
+
+\item $u$ n'est pas à proprement parler une inclusion, mais on considérera
+  souvent que dans cette situation $u: k \rightarrow K$ que \textbf{K est une
+    extension de k}.
+
+\item \myt Étant donné un corps $k$ et une extension finie $K$, dans un corps
+  algébriquement clos $\Omega$. Il est possible d'exhiber un morphisme de corps
+  $K \rightarrow \Omega$ dont la restriction à $k$ est l'inclusion $k \subset
+  \Omega$.
+
+On dit alors qu'on a prolongé l'extension $k \subset \Omega$ à $K$
+
+
+\newpage
+\item Preuve par récurrence sur la dimension de l'extension
+
+$n=0 (k=K)$ est trivial
+
+$K=k[x_1,\ldots,x_n]$ on note $k'=k[x_1\ldots x_{n-1}]$ et $x_n=x$
+
+$k'$ est un sous-corps de $K$ de dimension $n-1$, on peut le prolonger dans
+$K$. Il nous faut donc à présent prolonger $k'$ dans $K$, sachant que $K=k'[x]$
+
+Les éléments de $K$ sont donc les valeurs $P(x)$ des polynômes $P$ de $k'[X]$
+pour $x$
+
+Par ailleurs on a démontré précédemment que deux polynômes $P$ et $Q$
+coincident en $x$ ssi leur différence divise $P_{min,x}$, i.e.
+
+\[ P(x)=Q(x) \Longleftrightarrow P_{min,x} | (P-Q) \] 
+
+On choisit alors une racine quelconque de $P_{min,x}$ dans $\Omega$, et on
+définit le morphisme suivant
+
+$k'[X] \rightarrow \Omega$
+
+$P(x) \mapsto P(a) $
+
+Se pose la question de la bonne définition; un élément $y$ de $k$ peut sans
+doute être obtenu comme la valeur sur $x$ de deux polynômes différents
+$P$  et $Q$; mais dans ce cas on a
+
+$ y = P(x) = Q(x) $
+
+D'après ce qui précède $P-Q$ divise $P_{min,x}$, et comme $a$ est racine de
+$P_{min,x}$ on a $(P-Q)(a)=0$
+
+Cette application est-elle un morphisme ?
+
+$ u(P(x)).u(Q(x)) = P(a).Q(a) = (P.Q)(a) = u (PQ(x)) =
+u(P(x).Q(x))$
+
+xxx à terminer
+
+Par hypothèse de récurrence, $u$ est bien $k'\mapsto \Omega$ 
+
+xxx à terminer. je ne comprends toujours pas comment l'extension puet être
+rapprochée avec une inclusion...
+\end{itemize}
+
+\newcommand{\stwo}{\sqrt{2}}
+
+\myline
+\begin{itemize} 
+\item Prolongement non unique; exemple $\Q[\stwo]$; \mynote{je ne sais pas si
+    c'est perninent mais ici on à l'air de penser 'application linéaire'; et
+    donc sur la base (1, $\stwo$ ) on doit nécessairement avoir $u(1)=1$
+    pour morphisme, mais on peut avoir ou bien $u(\stwo)=\stwo$ ou encore
+    $u(\stwo)=-\stwo$ }
+
+Soit encore en termes de matrices $((1,0),(0,1))$ ou $((1,0),(0,-1))$
+\end{itemize}
+
+\newpage
+\begin{itemize} 
+\item \mybox{\myp Soit $K/k$ une extension finie de corps; dans un corps
+    algébriquement clos $\Omega$, et soit $x\in K$. L'ensemble des $u(x)$ pour
+    tous les prolongements $u: K \mapsto\Omega$ de l'extension $k\subset
+    \Omega$ à $K$ est exactement l'ensemble des conjugués de $x$ dans
+    $\Omega$.}
+\item Preuve; sens direct : les u(x) sont des conjugués de $x$
+
+Tout d'abord remarquons que pour un tel prolongement $u$, on a 
+
+$P_{min,x}(u(x)) = u(P_{min,x}(x)) = u(0) = 0$
+
+C'est la définition des conjugués de $x$
+
+\mynote{je ne vois pas où on utilise le fait que $u$ est l'identité sur $k$}
+
+\item Preuve - réciproque
+
+Soit $a$ une racine de $P_{min,x}$, comme dans la preuve du théorème précédent,
+on peut prolonger $k\subset\Omega$ par un morphisme en envoyant $x$ sur $a$.
+\end{itemize} 
+
+\myline
+\begin{itemize}
+\item En caractéristique 0, le théorème de l'élément primitif dit que $K=k[x]$
+
+\item $ Card({prolongements}) = Card ({conjugues~de~x}) = Card({racines~de~P_{min,x}}) = deg(P_{min.x}) = [K:k]$
+
+\end{itemize}
+
+\newpage
+\section*{S04E01 -- Corps finis}
+
+\begin{itemize} 
+\item $(\Z/p\Z,+,x)$ pour $p$ premier est un corps noté $F_p$
+\item  Nous allons voir que tous les corps finis ont un cardinal $p^n$ avec p
+premier
+
+\item détail de $F_4$ ($a^3=1$)
+
+\centerline{
+\begin{tabular} {|c|cccc|}
+\hline
++&0&1&a&b\\
+\hline
+0&0&1&a&b\\
+1&1&0&b&a\\
+a&a&b&0&1\\
+b&b&a&1&0\\
+\hline
+\end{tabular} 
+\hspace{1cm}\begin{tabular}{|c|cccc|}
+\hline  
+x&0&1&a&b\\
+\hline
+0&0&0&0&0\\
+1&0&1&a&b\\
+a&0&a&b&1\\
+b&0&b&1&a\\
+\hline
+\end{tabular} 
+}
+
+\item \mybox{\myp Soit $k$ un corps fini, sa caractéristique est un nombre
+    premier $p$ et son cardinal est une puissance de $p$}
+
+\item Preuve
+
+Comme $k$ est un corps, sa caractéristique est un nombre premier $p$
+(cf. semaine 1) et il contient $F_p$ (exo. semaine 1)
+
+$k$ est donc un $F_p$ espace-vectoriel de dimension finie $n$, donc isomorphe à $F_p^n$
+
+Son cardinal est donc $p^n$
+\end{itemize}
+
+\myline
+\begin{itemize}
+\item \myt (de Lagrange): Soit $g$ un groupe fini de cardinal $n$ et
+    d'élément neutre $e$. Pour tout $g$ dans $G$ on a $g^n=e$
+
+\item \myd Dans un groupe $G$, l'ordre d'un élément $g$ est le plus petit
+  entier $n$ tel que $g^n=e$ (on pose par définition $\infty$ si aucun entier
+  ne convient - cas des groupes non finis).
+
+\item dans le cas d'un élément $g$ d'ordre fini $d$, on considère l'ensemble
+  ${e, g, \ldots, g^{d-1}}$ qui est un sous-groupe de $G$ de cardinal $d$.
+
+\item \fbox {$g^m=e \Longleftrightarrow d | m$}
+
+\item Si $ord(g) = \infty$ alors $G$ est infini.
+
+\newpage
+\item \mybox{\myt (un peu plu général que celui de Lagrange). Soit $G$ un groupe fini
+  et soit $H$ un sous-groupe de $G$. Le cardinal de $H$ divise le cardinal de $G$.}
+
+\item Preuve
+
+Pour $g\in G$, on pose $gH = { gh | h\in H}$; on va montrer que $G$ est une
+partition de tels ensembles.
+
+Tout d'abord démontrons que si $g,g' \in G$, alors $gH = g'H$ ou bien
+$gH\cap g'H = \emptyset$
+
+S'il existe un élément commun, alors $gh = g'h' \in gH \cup g'H$
+
+Soit $g=g'h'h^{-1} \in g'H$
+
+Donc $\forall h''\in H, gh''=g'h'h^{-1}h'' \in g'H$, donc $gH \subset g'H$
+
+De manière symétrique $g'H \subset gH$ et donc $gH=g'H$
+
+Absent dans la vidéo, mais on peut montrer que $card(gH)=card(H)$ en montrant
+que $h\neq h' \Rightarrow gh \neq gh'$ de manière évidente par l'absurde; $gh =
+gh' \Rightarrow g^{-1}gh=g^{-1}gh' \Rightarrow h=h'$
+
+L'ensemble des $gH$ forme donc une partition de $G$ (intersection vide 2 à
+2, union = $G$) et sont tous de même cardinal $card(H)$; d'où le théorème, le
+cardinal de $H$ est donc le produit du cardinal de $H$ par le nombre de ces partitions.
+
+\end{itemize} 
+
+\section*{S04E02 -- Théorème de l'élément primitif pour les corps finis}
+
+\begin{itemize}
+\item \myt Soit $K/k$ une extension de corps finis, $\exists x \in K | K =
+  k[x]$
+
+\item \myl \textit{plus général que le théorème}. Soit $K$ un corps (pas
+  nécessairement fini); soit $G$ un sous-groupe fini du groupe multiplicatif
+  $(k^*,x)$. Alors $G$ est engendré par un élément.
+
+\item \mynote{Il semble que ceci peut être reformulé de la façon plus simple
+    suivante~: 
+\\tout groupe fini commutatif est monogène}
+
+\item On peut récrire ceci comme, si $n = card (G)$, alors $\exists g \in G |
+  {1_k,g,g^2\ldots g^{n-1}} = G$
+
+\item Le lemme entraîne le théorème: 
+
+En notant $q$ le cardinal de $K$, il existe $x\in K^*$ tel que
+$K^*={1,x,x^2\ldots x^{q-2}}$
+
+A fortiori $K=k[x] \blacksquare$ 
+
+\mynote {On n'a démontré jusqu'ici seulement que $K \subset k[x]$ il me
+  semble}. Il faudrait peut-être ajouter que comme $K$ est lui-même un corps,
+il est stable pour $+$.
+
+\item \myr Une fois qu'on a trouvé un tel $x$, si on numérote les éléments non
+  nuls de $K$ selon les puissances de $x$, on peut remarquer que la table de
+  multiplication devient simple, mais bien sûr on a alors mélangé les cartes et
+  c'est la table d'addition qui devient obscure.
+
+\item \mye Les puissances multiplicatives successives de 2 dans le groupe
+  multiplicatif $(F_{11}^*,x)$ sont 
+\begin{tabular}{|c|cccccccccc|}
+i&1&2&3&4&5&6&7&8&9&10\\
+$2^i$&2&4&8&5&10&9&7&3&6&1\\
+\end{tabular} 
+
+On ne sait pas en général produire un tel générateur
+\end{itemize} 
+
+\begin{itemize}
+\item Rappels d'arithmétique
+
+\item Décomposition d'un nombre entier en produit de facteur
+  premiers
+
+\[ n = \prod\limits_{p~premier} p^{\nu_p(n)} \]
+
+\[ pgcd (m,n) = \prod\limits_{p~premier}p^{min(\nu_p(m),\nu_p(n)}\]
+
+\[ ppcm (m,n) = \prod\limits_{p~premier}p^{max(\nu_p(m),\nu_p(n)}\]
+
+\[ ppcm (m,n) * pgcd (m,n) = mn \]
+
+\[ q = p^\nu | ppcm(m,n) \Rightarrow (q | m \vee q | n )\]
+
+\end{itemize} 
+
+\myline
+\begin{itemize} 
+\item Rappels (1) sur l'ordre d'un élément d'un groupe (le plus petit entier tel
+  que $g^n=e$ - et dans notre cas $e=1_k$
+\item Rappels (2) sur l'ordre: pour tout entier $m$ positif ou négatif, $g^m=1
+  \Longleftrightarrow ord(g)|m$
+\item Rappels (3) $\forall g \in G, ord(g)<=card(G)$
+\item Rappels (4) \mynote{$a|c \wedge b|c \rightarrow ppcm(a,b)|c$}
+\item Preuve du lemme
+
+On peut trouver un élément $g\in G$ dont l'ordre est maximal $d$ puisque tous les
+ordres sont finis
+
+\textbf{Première étape:} $\forall h \in G, ord(h)|d$
+
+Démonstration par l'absurde; $ord(h)=e$ et supposons que $e \nmid d$
+
+Alors il existe $q'$ puissance de nombre premier avec $q'|e$ mais $q'\nmid d$
+
+On considère alors $h' = h^{e/q'}$, cet élément de $G$ est d'ordre $q'$ \mynote{car
+(1) $(h')^{q'} = h^e = 1$ et (2) s'il existait un entier $s'$ plus petit que $q'$ tel
+que $(h')^{r'}=h^{\frac{e.s}{q'}} = 1$ alors l'ordre de $h$ serait plus petit
+que $e$}
+
+Soit à présent $r = ord (g.h')$ 
+
+On a $ (gh')^r=1$ donc $(h')^r = g^{-r}$ \textbf{car K est commutatif} 
+
+On élève à présent les deux membres à la puissance $\frac{d}{pgcd(d,r)}$ qui
+est bien un entier (c'est vrai pour tout $d,r$ évidemment).
+
+\[(h')^{\frac{dr}{pgcd(d,r)}} = g^{\frac{-dr}{pgcd(d,r)}} =
+(g^d)^{\frac{-r}{pgcd(d,r)}} = 1_k\]
+
+Par ailleurs $ (h')^{\frac{dr}{pgcd(d,r)}} = (h')^{ppcm(d,r)} $ puisque le
+produit du pgcd et du ppcm donne le produit des deux opérandes, voir rappels ci-dessus
+
+Donc l'ordre $q'= ord(h')$ divise $ppcm(d,r)$ et c'est une puissance de nombre
+premier qui par hypothèse (du raisonnement par l'absurde) ne divise pas $d$
+
+\fbox{Donc $q' | r$}
+
+Soit $(h')^r=1$ ce qui implique que $g^r=1$ car $(h')^r=g^{-r}$.
+
+\fbox{D'où $d | r$}
+
+Finalement on a montré sous les hypothèses du raisonnement par l'absurde que
+$d|r$, que $q'|r$, donc on peut affirmer que $ppcm(d,q')|r$, et par conséquent
+que $r>d$ car naturellement $pgcd(a,b)$ est toujours $>a$
+
+On a donc exhibé un élément $gh'$ dont l'ordre est supérieur à $d$, supposé
+être l'ordre maximal, il y a contradiction, nous avons donc établi que $e|d$
+
+\item Deuxième étape 
+
+Donc $\forall h \in G, h^d=1_k$
+
+Ce qui signifie que l'on a au moins $card(G)$ racines différentes pour le polynôme
+$X^d-1_k$; or ce polynôme a au plus $d$ racines, et donc $d=card(G)$; il existe
+donc un élément $g$ dans $G$ dont l'ordre correspond au cardinal de $G$, cet
+élément génère donc $G$ $\blacksquare$ 
+
+\end{itemize} 
+\newpage
+\section*{S04E03 -- Construction des corps finis}
+\begin{itemize}
+\item \myp Soit $k$ un corps fini de caractéristique $p$. L'application
+  suivante est un morphisme de corps, dit morphisme de Frobenius.
+
+$ F: k \rightarrow k
+\\ x \mapsto x^p $ 
+
+\item Preuve
+
+$F(0)=0$ et $F(1)=1$
+
+$F(x+y)=(x+y)^p= x^p+\sum\limits_{i<=i<p}\binom{p}{i}x^iy^{(p-i)}+y^p =
+x^p+y^p =F(x)+F(y)$ 
+\\ \mbox{}\hspace{1cm}\mynote{En caractéristique $p$ les termes $\binom{p}{i}$ sont nuls car
+  toujours multiples de $p$}
+
+$F(x.y)=(xy)^p = x^p.y^p= F(x).F(y)$
+\\ \mbox{}\hspace{1cm}\mynote{k commutatif}
+
+\item Dans le cas de $F_p$ avec $p$ premier, le Frobenius est l'identité
+
+\item Dans le cas général $k$ de caractéristique $p$ premier, et de cardinal
+  $q=p^n$ (établi précédemment, semaine 1?)
+
+Le théorème de Lagrange appliqué à $k^*$ nous dit que $\forall x\in k^*,
+x^{q-1}=1$
+
+Soit encore $x^q=x$, mais comme $q=p^n$ on peut écrire
+
+$F^n=Id_k$
+
+\item Soit $k\subset K$, $X^q-X$ a au plus $q$ racines dans $K$ et donc on les connaît
+  toutes, ce sont les éléments de $k$. 
+
+$\forall x\in K, x^q=x \Longleftrightarrow x\in k$
+
+On va utiliser cette remarque pour construire un corps à $q$ éléments
+
+\end{itemize} 
+
+\myline
+\begin{itemize}
+\item En si situant dans $\Omega$ un corps algébriquement clos contenant $Fp$ -
+  dont on a admis l'existence grâce au théorème de Steiniz
+
+On considère le polynôme $P = X^q-X \in F_p[X]$
+
+On définit alors l'ensemble $ k:= { x\in \Omega~|~x^q=x} $
+
+$P'(X) = q.X^{q-1}-1 = -1$ car en caractéristique $p$, $q=p^n=0$
+
+D'après la semaine 1, comme $P'$ est non nul, $P$ n'a pas de racine multiple
+
+\fbox{$k$ a exactement $q$ éléments}
+
+\mynote{En première lecture j'avais mal compris l'unicité de $k$ dans la
+  construction ci-dessus. En fait on a montré que (a) $k$ est l'ensemble
+  des racines de $X^q-X$ dans $\Omega$, il est donc bien défini; et (b) que
+  si un sous-corps de cardinal $q$ de $\Omega$ existe alors il contient les racines -
+  distinctes - de $X^{q}$. On a donc bien unicité de la construction.}
+
+Il se trouve que l'ensemble de ses racines \fbox{est un corps}~: c'est le corps
+fixe de l'automorphisme $F_{\Omega}^n: x\mapsto x^{p^n} = x^q$
+\end{itemize} 
+
+\begin{itemize} 
+\item \myp {Soit $K$ un corps et soit $g$ un automorphisme du corps
+    $K$. L'ensemble des points fixes de $g$~:
+
+$ K^g = \{ x\in K ~|~ g(x)=x \} $
+
+est un sous-corps de $K$}
+
+\item Preuve -- assez trivial
+
+$g(0)=0$ donc $0\in K^g$ - ditto pour $1$
+
+$\forall x,y \in K^g, g(x-y)=x-y$, donc $x-y \in K^g$ -- ditto pour /
+
+\item Généralisation à un ensemble d'automorphimes
+
+\myp Soit $S$ un ensemble d'automorphimes de $K$, l'ensemble des points fixes
+communs à tous les automorphismes de $S$ est un sous-corps de $K$ - c'est en
+fait l'intersection des corps fixes de $g$ pour $g$ variant dans $S$.
+
+\end{itemize} 
+\myline
+
+\begin{itemize}
+\item On a donc construit, en partant de $\F_p$, en se plongeant un corps
+  algébriquement clos $\Omega$, un sous-corps de $\Omega$ de cardinal $q=p^n$,
+  comme le corps des racines de $X^q-X$.
+\item \myt Soit $p$ un nombre premier. Pour toute puissance $q$ de $p$, il
+  existe un corps à $q$ éléments et deux tels corps sont isomorphes.
+
+On note un tel corps $\F_q$
+
+\item $F_{p^n}$ contient $F_p$, quand contient-il $F_{p^m}$ ?
+
+Réponse: quand $m$ divise $n$ (\textbf{attention}, l'exposant, pas la puissance)
+
+\myp Soient $k_1$ et $k_2$ deux corps finis. $k_2$ est une extension de $k_1$
+  si et seulement si ils ont même caractéristique $p$ et $\exists n_1, n_2~|~
+  n_1|n_2$ et $card(k_1)=p^{n_1}$ et $card(k_2)=p^{n_2}$.
+
+\item \mye Ainsi $\ F_4$ n'est pas un sous-corps de $\F_8$
+
+\item Preuve -- sens direct 
+
+Si $k_1 \subset k_2$
+\mynote{On devrait d'abord remarquer qu'ils ont nécessairement même
+  caractéristique, car l'ensemble $\{1,1+1,\ldots,0\}$ de $k_1$ est dans $k_2$}
+
+Posons donc $card(k_1)=p^{n_1}$ et $card(k_2)=p^{n_2}$.
+
+$k_2$ est un $k_1$-espace vectoriel de dimension finie $n$. Donc $k_2$ est
+isomorphe à $(k_1)^n$, qui est de cardinal $p^{n.n_1}$. D'où $n_1~|~n_2$.
+
+\item Preuve -- réciproque
+
+Si $n_2 = n.n_1$
+
+$k_2$ est formé des racines dans $\Omega$ de $X^{n.n_1}-X$, alors que $k_1$ est
+pour sa part constitué des racines de $X^{n_1}-X$; 
+
+donc tout élément X de $k_1$ vérifie bien $X = X^{n_1}$
+
+en élevant à la puissance $n_1$ on obtient alors 
+
+$X = X^{n_1} = X^{2.n_1}$ 
+
+et ainsi de proche en proche $X = \ldots = X^{n.n_1}$; $X$ est donc bien un élément de $k_2$
+\end{itemize}
+
+\end{document} 
